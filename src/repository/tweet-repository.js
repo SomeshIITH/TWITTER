@@ -21,15 +21,25 @@ class TweetRepository{
         }
     }
 
-    async getAllTweets(){
+    async getAllTweets(offset,limit){
         try{
-            const tweets = await Tweet.find();
+            const tweets = await Tweet.find().skip(offset).limit(limit);
             return tweets;
         }catch(error){
             console.log(`error in getting all tweets ${error}`);
             throw error;
         }
-    }   
+    }  
+    
+    async getTweetWithComments(id){
+        try{
+            const tweet = await Tweet.findById(id).populate({path : "Comment"}).lean();//lean will stop converting into mongo object and it be js object
+            return tweet;
+        }catch(error){
+            console.log(`error in getting tweet with comment ${error}`);
+            throw error;
+        }
+    }
 
     async updateTweet(tweetId, data){
         try{

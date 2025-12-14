@@ -28,7 +28,15 @@ const startServer = () => {
         // tweet.comments.push(comment);//because its array
         // await tweet.save();
 
-        const tweet = await Tweet.findById("693ef5c94dcfba084b964612").populate({path : "comments"});
+        // const tweet = await Tweet.findById("693ef5c94dcfba084b964612").populate({path : "comments"}).lean();//necessary to tell ref : in model
+        
+        // const tweet = await Tweet.find().skip(3).limit(1);
+        // console.log(tweet[0].contentWithEmail); //-->Hello world is created by b@c.com     use of virtual contentWithEmail
+
+        // const tweet = await Tweet.create({content : "Content with hooks"});      used prehook
+
+        
+
         console.log(tweet);
 
     });
