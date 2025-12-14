@@ -7,7 +7,10 @@ const tweetSchema = new mongoose.Schema({
     },
     userEmail : {
         type : String
-    }
+    },
+    comments : [{
+        type : mongoose.Schema.Types.ObjectId
+    }]
 },{timestamps : true});//timestamp will add createdAt and updatedAt
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
