@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 const hashingScheme = new mongoose.Schema({
-    title : {
+    tag : {
         type : String,
         required : true,
         unique : true

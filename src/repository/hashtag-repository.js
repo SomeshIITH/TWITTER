@@ -7,14 +7,14 @@ class HashTagRepository extends CrudRepository{
         super(Hashtag);
     }
 
-    async findByTitle(title){
+    async findByTag(tags){
         try{
-            const hashtag = await HashTag.findOne({
-                title : title
+            const hashtag = await HashTag.find({
+                tag : tags
             })
             return hashtag;
         }catch(error){
-            console.log(`error in finding hashtag by title ${error}`);
+            console.log(`error in finding hashtag by tag ${error}`);
             throw error;
         }
     }

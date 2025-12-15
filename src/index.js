@@ -6,10 +6,18 @@ import {connect} from './config/database.js';
 
 const app = express();
 
-const PORT = 3000
+import {PORT} from './config/serverConfig.js'
 
-const Tweet = require('./models/tweet')
-const Comment = require('./models/comment')
+// import Tweet from './models/tweet.js';
+// import Comment from './models/comment.js';
+
+import apiRoutes from './router/index.js';
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended : true}));
+
+app.use('/api',apiRoutes);
+
 
 const startServer = () => {
     app.listen(PORT, async () => {
@@ -19,7 +27,8 @@ const startServer = () => {
         await connect();
         console.log('connection established');
 
-        // const tweet = await Tweet.create({content : "Hello world" , userEmail : "a@b.com"});
+        // const tweet = await Tweet.create({content : "Hello #world" , userEmail : "a@b.com"});
+
 
         // const tweet = await Tweet.find({userEmail : "a@b.com"})
 
@@ -39,7 +48,8 @@ const startServer = () => {
 
         // const tweet = await Tweet.create({content : "Content with hooks"});      used prehook
 
-        
+
+        // const tweet = await tweetService.create({content : "Hello #world" , userEmail : "a@b.com"});
 
         // console.log(tweet);
 

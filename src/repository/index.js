@@ -1,9 +1,9 @@
-import CommentRepository from "./comment-repository";
-import CrudRepository from "./crud-repository";
-import HashTagRepository from "./hashtag-repository";
-import LikeRepository from "./like-repository";
-import UserRepository from "./user-repository";
-import TweetRepository from "./tweet-repository";
+import CommentRepository from "./comment-repository.js";
+import CrudRepository from "./crud-repository.js";
+import HashTagRepository from "./hashtag-repository.js";
+import LikeRepository from "./like-repository.js";
+import UserRepository from "./user-repository.js";
+import TweetRepository from "./tweet-repository.js";
 
 export {
     CrudRepository,

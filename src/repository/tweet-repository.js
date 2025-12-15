@@ -16,4 +16,4 @@ class TweetRepository extends CrudRepository{
     }
 }
 
-module.exports = TweetRepository;
+export default TweetRepository;

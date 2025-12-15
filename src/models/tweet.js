@@ -28,10 +28,10 @@ const tweetSchema = new mongoose.Schema({
 // });
 
 //using hook
-tweetSchema.pre('save',function(){
-    console.log("inside a hook");
-    this.content = this.content + '....by hook'
-})
+// tweetSchema.pre('save',function(){
+//     console.log("inside a hook");
+//     this.content = this.content + '....by hook'
+// })
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
 export default Tweet;
