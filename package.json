@@ -2,14 +2,16 @@
   "name": "tweetservice",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start" : "npx nodemon src/index.js"
+    "start": "npx nodemon src/index.js"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "body-parser": "^2.2.1",
     "express": "^5.2.1",
     "mongoose": "^9.0.1"
   }

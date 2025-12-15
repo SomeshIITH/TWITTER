@@ -1,5 +1,9 @@
-const express = require('express');
-const connect = require('./config/database')
+import express from 'express';
+import bodyParser from 'body-parser';
+
+import {connect} from './config/database.js';
+
+
 const app = express();
 
 const PORT = 3000
@@ -37,7 +41,7 @@ const startServer = () => {
 
         
 
-        console.log(tweet);
+        // console.log(tweet);
 
     });
 };

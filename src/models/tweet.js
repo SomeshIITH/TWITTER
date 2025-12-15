@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const tweetSchema = new mongoose.Schema({
     content : {
@@ -12,7 +12,14 @@ const tweetSchema = new mongoose.Schema({
     comments : [{
         type : mongoose.Schema.Types.ObjectId,
         ref : "Comment"
-    }]
+    }],
+    likes : {
+        type : mongoose.Schema.Types.ObjectId,
+        ref : "Like"
+    },
+    image : {
+        type : String,
+    }
 },{timestamps : true});//timestamp will add createdAt and updatedAt
 
 //using virtuals which allow to use getter and setters
@@ -27,4 +34,4 @@ tweetSchema.pre('save',function(){
 })
 
 const Tweet = mongoose.model('Tweet', tweetSchema);
-module.exports = Tweet
+export default Tweet;

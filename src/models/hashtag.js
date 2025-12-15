@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 
 const hashingScheme = new mongoose.Schema({
     title : {
@@ -15,4 +15,4 @@ const hashingScheme = new mongoose.Schema({
 },{timestamps:true});
 
 const Hashtag = mongoose.model('Hashtag',hashingScheme);
-module.exports = Hashtag;
+export default Hashtag;
