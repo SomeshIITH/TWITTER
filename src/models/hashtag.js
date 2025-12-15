@@ -6,7 +6,7 @@ const hashingScheme = new mongoose.Schema({
         required : true,
         unique : true
     },
-    tweets : [
+    tweets : [      //required because hashtag can have many tweets
         {
             type : mongoose.Schema.Types.ObjectId,
             ref : "Tweet"
