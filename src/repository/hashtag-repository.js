@@ -8,7 +8,7 @@ class HashTagRepository extends CrudRepository{
 
     async findByTag(tags){
         try{
-            const hashtag = await HashTag.find({
+            const hashtag = await Hashtag.find({
                 tag : tags
             })
             return hashtag;
