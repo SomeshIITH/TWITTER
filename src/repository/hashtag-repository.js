@@ -1,5 +1,4 @@
 import Hashtag from "./../models/hashtag.js";
-import HashTag from "./../models/hashtag.js";
 import CrudRepository from "./crud-repository.js";
 
 class HashTagRepository extends CrudRepository{

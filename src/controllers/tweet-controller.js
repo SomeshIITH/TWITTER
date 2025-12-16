@@ -1,8 +1,8 @@
-import TweetService from './../services/tweet-service.js';
+import {TweetService} from './../services/index.js';
 
 const tweetService = new TweetService();
 
-const createTweet = async (req,res)=>{
+export const createTweet = async (req,res)=>{
     try{
         const response = await tweetService.create(req.body);
         return res.status(201).json({
@@ -22,7 +22,7 @@ const createTweet = async (req,res)=>{
     }
 }
 
-const getTweet = async (req,res)=>{
+export const getTweet = async (req,res)=>{
     try{
         const tweetId = req.params.id;
         const response = await tweetService.get(tweetId);
@@ -43,6 +43,6 @@ const getTweet = async (req,res)=>{
     }
 }
 
-export default {
-    createTweet , getTweet
-}
+// export default {
+//     createTweet , getTweet
+// }

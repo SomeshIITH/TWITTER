@@ -23,7 +23,13 @@ const CommentSchema = new mongoose.Schema({
     comments : [{       //required because comments can have comments
         type : mongoose.Schema.Types.ObjectId,
         ref : "Comment"
-    }]
+    }],
+    likes : [
+        {
+            type : mongoose.Schema.Types.ObjectId,
+            ref : "Like"
+        }
+    ]
 },{timestamps:true});
 
 const Comment = mongoose.model('Comment',CommentSchema);
